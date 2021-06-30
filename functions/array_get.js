@@ -4,15 +4,15 @@ module.exports = function(arr, path) {
                         .filter(el => el)
                         .reverse();
 
-    return getItemRecursivly(arr, pathArr);
+    return getItemRecursively(arr, pathArr);
 
-    function getItemRecursivly(array, pathArr) {
+    function getItemRecursively(array, pathArr) {
         const searchIndex = pathArr.pop();
 
         if(pathArr.length === 1) {
             return array[searchIndex][pathArr[0]];
         } else {
-            return getItemRecursivly([...array[searchIndex]], pathArr)
+            return getItemRecursively([...array[searchIndex]], pathArr)
         }
     }
 }
